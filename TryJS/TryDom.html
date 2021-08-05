@@ -14,6 +14,12 @@
 
             var myDiv = document.getElementById("myDiv");
             myDiv.innerHTML = val;
+
+            var newDiv = document.createElement("p");
+            newDiv.style = "color: red;";
+            newDiv.innerText = "Hello red text.";
+            //myDiv.appendChild(newDiv);        // 加入至最後
+            myDiv.innerHTML = newDiv.outerHTML; // 覆蓋
         }
     </script>
 
@@ -25,6 +31,11 @@
 
     <div id="myDiv">
         -
+        <p style="color: red;">Hello red text</p>
+    </div>
+
+    <div style="color: red;">
+        123    
     </div>
 </body>
 </html>
