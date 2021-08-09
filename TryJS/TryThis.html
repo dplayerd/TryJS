@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 全域變數的 this
+        //alert("alert");
+        //window.alert("window.alert");
+        //this.alert("this.alert");
+
+        //document.alert("document.alert");
+
+        
+        function Exec() {
+            var self = this;
+
+            console.log(window == self);
+            console.log(self);
+        }
+
+        Exec();
+        console.log("-----");
+
+        // 物件裡的 this
+        var car = {
+            Color: "Red",
+            Exec: function() {
+                console.log(car == this);
+                console.log(this.Color);
+            }
+        };
+        car.Exec();
+
+        // 動態指定 Method 到物件
+        var car2 = { 
+            Name: "Car2",
+            Exec2: function() {
+                this.Exec();
+                console.log(this);
+            }
+        };
+        car2["Exec"] = Exec;
+        //car2.Exec();
+        car2.Exec2();
+    </script>
+</body>
+</html>
