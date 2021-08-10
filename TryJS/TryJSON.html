@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj2 = {
+            Name: "123",
+            'AGE': 21,
+            "Exec": function() {
+                alert(123);
+            }
+        };
+        console.log(obj2);
+
+        var str = JSON.stringify(obj2);
+        console.log(str);
+
+        var str2 = '{"Name":"123","AGE":21}';
+        var obj3 = JSON.parse(str2);
+        console.log(obj3);
+
+        var str3 = '{Name:"123","AGE":21}';
+        JSON.parse(str3);
+    </script>
+</body>
+</html>
